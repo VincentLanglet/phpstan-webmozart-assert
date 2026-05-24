@@ -119,7 +119,6 @@ class ImpossibleCheckTypeMethodCallRuleTest extends RuleTestCase
 			[
 				'Call to static method Webmozart\Assert\Assert::implementsInterface() with \'WebmozartAssertImpossibleCheck\\\\Bar\' and \'WebmozartAssertImpossibleCheck\\\\Bar\' will always evaluate to false.',
 				134,
-				$tipText,
 			],
 		]);
 	}
@@ -218,12 +217,10 @@ class ImpossibleCheckTypeMethodCallRuleTest extends RuleTestCase
 
 	public function testBug17(): void
 	{
-		$tipText = 'Because the type is coming from a PHPDoc, you can turn off this check by setting <fg=cyan>treatPhpDocTypesAsCertain: false</> in your <fg=cyan>%configurationFile%</>.';
 		$this->analyse([__DIR__ . '/data/bug-17.php'], [
 			[
 				'Call to static method Webmozart\Assert\Assert::implementsInterface() with \'DateTime\' and \'DateTimeInterface\' will always evaluate to true.',
 				9,
-				$tipText,
 			],
 		]);
 	}
